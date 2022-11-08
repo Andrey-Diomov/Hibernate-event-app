@@ -98,15 +98,29 @@ public class EventRepositoryImpl implements EventRepository {
                     format(LIKE_OPERATOR_FORMAT, parameters.getOrganizer())));
         }
 
-        if (isNotBlank(parameters.getSort())) {
-            if (parameters.getSort().equalsIgnoreCase(DEFAULT_SORTING_MODE)) {
+        if (isNotBlank(parameters.getSortTopic())) {
+            if (parameters.getSortTopic().equalsIgnoreCase(DEFAULT_SORTING_MODE)) {
+                query.orderBy(builder.asc(root.get(TOPIC)));
+            } else {
+                query.orderBy(builder.desc(root.get(TOPIC)));
+            }
+        }
+
+        if (isNotBlank(parameters.getSortOrganizer())) {
+            if (parameters.getSortOrganizer().equalsIgnoreCase(DEFAULT_SORTING_MODE)) {
+                query.orderBy(builder.asc(root.get(ORGANIZER)));
+            } else {
+                query.orderBy(builder.desc(root.get(ORGANIZER)));
+            }
+        }
+
+        if (isNotBlank(parameters.getSortTime())) {
+            if (parameters.getSortTime().equalsIgnoreCase(DEFAULT_SORTING_MODE)) {
                 query.orderBy(builder.asc(root.get(TIME)));
             } else {
                 query.orderBy(builder.desc(root.get(TIME)));
             }
         }
-
-        //query.orderBy(builder.asc(root.get(TOPIC)));
         return query.select(root).where(builder.and(predicates.toArray(Predicate[]::new)));
     }
 }

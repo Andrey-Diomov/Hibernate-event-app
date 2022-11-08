@@ -13,6 +13,7 @@ import java.sql.Timestamp;
 public class ParametersEventQueryDTO {
     private String topic;
     private String organizer;
-    private Timestamp time;
-    private String sort;
+    private String sortTopic;
+    private String sortOrganizer;
+    private String sortTime;
 }
