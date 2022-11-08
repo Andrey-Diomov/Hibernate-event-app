@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'epam.com.esm'
+group 'by.diomov.event'
 
 repositories {
     mavenCentral()
@@ -10,7 +10,6 @@ repositories {
 
 dependencies {   
     implementation 'org.postgresql:postgresql:42.3.1'
-    implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
     testImplementation group: 'com.h2database', name: 'h2', version: '2.1.214'
 }

@@ -22,13 +22,8 @@ allprojects {
             implementation 'org.springframework.boot:spring-boot-starter-web'
             compileOnly 'org.projectlombok:lombok'
             annotationProcessor 'org.projectlombok:lombok'
-
             providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-
-            // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
             testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.7.5'
-
-
         }
 
         configurations {
