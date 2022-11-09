@@ -1,15 +1,11 @@
-# Gift-Certificate-app
+# Event App
 
-This is jenkins module(6)
+To launch:
 
-Stack :
-Java 8,
-Spring (Boot, Security),
-JPA,
-REST,
-Gradle,
-Lombok,
-PostgreSQL,
-JUnit,
-Mockito.
+1) Main class name : 'by.diomov.event.EventAppApplication'
+
+or
+
+2) Go to the root of the application where build.gradle 
+   Run execute the below command gradle bootRun
 
